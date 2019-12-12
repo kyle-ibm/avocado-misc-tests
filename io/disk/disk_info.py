@@ -245,7 +245,7 @@ class DiskInfo(Test):
                                           shell=True,
                                           sudo=True).decode('utf-8')
             lst = total.splitlines() + middle.splitlines()
-            lst.sort()
+            lst.sort(key=int)
             index = lst.index(middle.splitlines()[0])
             low = lst[index-1]
             high = lst[index+1]
